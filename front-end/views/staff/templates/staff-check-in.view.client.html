@@ -1,0 +1,48 @@
+<div ng-include="'views/common/header.view.client.html'"></div>
+
+
+<div class="container-fluid">
+    <h2>Check-in Passengers</h2>
+    <div ng-show="vm.error" class="alert alert-danger">{{vm.error}}</div>
+
+    <ul class="list-group">
+        <li class="list-group-item active">
+            <div class="row">
+            <div class = "col-sm-2">User ID (Last 10 chars)</div>
+            <div class = "col-sm-2">Username</div>
+            <div class = "col-sm-1">First Name</div>
+            <div class = "col-sm-1">Last Name</div>
+            <div class = "col-sm-2">Passport Number</div>
+            <div class = "col-sm-1">Check in</div>
+            <div></div>
+            </div>
+        </li>
+
+    <li ng-repeat="passenger in vm.passengers" class="list-group-item">
+        <div class="row">
+            <div class="hidden-xs col-sm-2">
+                {{passenger._id.slice(-10)}}
+            </div>
+            <div class="col-sm-2">
+                {{passenger.username}}
+            </div>
+            <div class="col-sm-1">
+                {{passenger.first_name}}
+            </div>
+            <div class="col-sm-1">
+                {{passenger.last_name}}
+            </div>
+            <div class="col-sm-2">
+                {{passenger.passport_number}}
+            </div>
+            <div class="col-sm-1">
+                <span class="btn btn-success" ng-click="vm.checkinPassenger(passenger._id)"> Check-In</span>
+            </div>
+        </div>
+    </li>
+    </ul>
+    <a href="#!/staff" class="btn btn-delete">Back</a>
+</div>
+
+
+<div ng-include="'views/common/footer.view.client.html'"></div>

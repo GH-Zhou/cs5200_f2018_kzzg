@@ -1,0 +1,43 @@
+<div ng-include="'views/common/header.view.client.html'"></div>
+
+<div class="container-fluid">
+    <a href="#!/public_profile/{{vm.other_user.username}}">
+        <h2>Public Profile of <span class="label label-primary">{{vm.other_user.username}}</span></h2>
+    </a>
+    <br>
+    <ul class="list-group">
+        <li class="list-group-item active">
+            <div class="row">
+                <div class="col-xs-4">Field</div>
+                <div class="col-xs-8">Value</div>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-xs-4">Username</div>
+                <div class="col-xs-8"><b>{{vm.other_user.username}}</b></div>
+            </div>
+        </li>
+        <li class="list-group-item" ng-show="vm.other_user.first_name">
+            <div class="row">
+                <div class="col-xs-4">First Name</div>
+                <div class="col-xs-8"><b>{{vm.other_user.first_name}}</b></div>
+            </div>
+        </li>
+        <li class="list-group-item" ng-show="vm.other_user.email">
+            <div class="row">
+                <div class="col-xs-4">Email address</div>
+                <div class="col-xs-8"><b>{{vm.other_user.email}}</b></div>
+            </div>
+        </li>
+        <li class="list-group-item" ng-show="vm.other_user.phone">
+            <div class="row">
+                <div class="col-xs-4">Phone Number</div>
+                <div class="col-xs-8"><b>{{vm.other_user.phone}}</b></div>
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+<div ng-include="'views/common/footer.view.client.html'"></div>
